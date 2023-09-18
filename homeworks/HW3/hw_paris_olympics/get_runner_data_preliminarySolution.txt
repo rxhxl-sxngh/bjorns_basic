@@ -1,0 +1,50 @@
+//TODO
+	double time;
+    string country;
+    unsigned int jersey;
+    string name;
+	for(unsigned int i = 0; i < SIZE; i++) {
+		cin >> time;
+		cin >> country;
+		cin >> jersey;
+		cin >> name;
+
+		if(time <= 0.0) {
+			return false;
+		}
+
+		country = trim(country);
+		if(country.length() != 3){
+			return false;
+		}
+		for(int x = 0; x < 3; x++) {
+			if(!(isalpha(country[x])) || !(isupper(country[x]))) {
+				return false;
+			}
+		}
+
+		if(jersey >= 100) {
+			return false;
+		}
+
+		name = trim(name);
+		if (name.size() == 0)
+		{
+			return false;
+		}
+		int length = name.length();	
+		for(int x = 0; x < length; x++) {
+			if(!(isalpha(name[x]))) {
+				return false;
+			}
+		}
+
+
+		timeArray[i] = time;
+		countryArray[i] = country;
+		numberArray[i] = jersey;
+		lastnameArray[i] = name;
+	}
+
+	// Update function to return the correct boolean values based on the parameters
+	return true; // set so it will compile
